@@ -22,7 +22,7 @@ source:
     sha256: bea006a6cc69673f27b1647e84ab3a68e912fbc175ab6320c5987e012897f311  # [win64]
 
 build:
-  number: 0
+  number: 1
   # git hardcodes paths to external utilities (e.g. curl)
   detect_binary_files_with_prefix: true
   ignore_run_exports_from:
@@ -69,6 +69,9 @@ test:
 
     # test completions
     - bash $PREFIX/share/bash-completion/completions/git  # [unix]
+
+    # test subtree presence
+    - git subtree -h
 
     # confirm toplevel manpage
     - test -f $PREFIX/man/man1/git.1  # [not win]

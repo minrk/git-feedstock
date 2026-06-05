@@ -58,6 +58,11 @@ echo "        sslCAInfo = ${cert_file}"  >> $PREFIX/etc/gitconfig
 mkdir -p $PREFIX/share/bash-completion/completions
 cp contrib/completion/git-completion.bash $PREFIX/share/bash-completion/completions/git
 
+pushd contrib/subtree
+make
+make install
+popd # subtree
+
 popd # code
 
 # Install manpages
