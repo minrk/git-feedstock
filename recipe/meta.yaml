@@ -71,7 +71,7 @@ test:
     - bash $PREFIX/share/bash-completion/completions/git  # [unix]
 
     # test subtree presence
-    - git subtree -h
+    - test -f $PREFIX/libexec/git-core/git-subtree  # [unix]
 
     # confirm toplevel manpage
     - test -f $PREFIX/man/man1/git.1  # [not win]
